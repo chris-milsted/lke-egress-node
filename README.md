@@ -89,7 +89,7 @@ IP: , 172.236.22.50
 
 Now we can setup the mesh and configure a new namespace called `mesh-namespace` to deploy the pods into again and see what happens.
 
-## Createing the mesh
+## Creating the mesh
 
 When helm installed the mesh, it created the default mesh but without some settings we need for egress routing to work. Firstly we need to enable egress routing and secondly we need to enable TLS as the routing is based on SNI naming. I have created a new [mesh](./mesh.yaml) object so just delete the default one and create the new one:
 
