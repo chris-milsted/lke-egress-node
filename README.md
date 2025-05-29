@@ -4,7 +4,9 @@ Some use cases like having a single IP address for a firewall, or simplifying th
 
 ## Create an LKE cluster
 
-I am going to create a simple cluster with 3 worker nodes for applications, and also add a second node pool with a single node to use as my egress gateway. You can of course set the replicas to more than one and have more nodes for HA use cases.
+I am going to create a simple cluster with 3 worker nodes for applications, and also add a second node pool with a single node to use as my egress gateway. You can of course set the replicas to more than one and have more nodes for HA use cases. 
+
+*NOTE* For production workloads it would be recommended to dedicate a single nodepool for the egress gateways, with 2 or more nodes for HA, to allow you to perform a rolling upgrade. As you upgrade, adding a new node, updating the new node IP in the required ACLs/SPF records, and then removing the old node. With this approach you can achieve zero downtime.
 
 The creation of the cluster I am not going to document here as I just used to the GUI and clicked my way through it. I can then grab my cluster ID from the linode command line like this
 ```bash
