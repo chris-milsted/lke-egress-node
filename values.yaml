@@ -1,0 +1,5 @@
+egress:
+  enabled: true
+  replicas: 1
+  nodeSelector:
+    zone: "egress"

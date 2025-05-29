@@ -1,0 +1,21 @@
+apiVersion: kuma.io/v1alpha1
+kind: ExternalService
+mesh: default
+metadata:
+  name: ifconfig-me
+spec:
+  tags:
+    kuma.io/service: ifconfig-me
+    kuma.io/protocol: tcp # optional, one of http, http2, tcp, grpc, kafka
+  networking:
+    address: ifconfig.me:80
+      #    tls: # optional
+      #      enabled: false
+      # allowRenegotiation: false
+      # serverName: httpbin.org # optional
+      # caCert: # one of inline, inlineString, secret
+      #   inline: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0t... # Base64 encoded cert
+      # clientCert: # one of inline, inlineString, secret
+      #   secret: clientCert
+      # clientKey: # one of inline, inlineString, secret
+      #   secret: clientKey

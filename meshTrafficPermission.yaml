@@ -1,0 +1,14 @@
+apiVersion: kuma.io/v1alpha1
+kind: MeshTrafficPermission
+metadata:
+  name: allow-all
+  namespace: mesh-namespace
+  labels:
+    kuma.io/mesh: default
+spec:
+  from:
+  - targetRef:
+      kind: Mesh
+    default:
+      action: Allow
+  
